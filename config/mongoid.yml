@@ -1,0 +1,14 @@
+development:
+  sessions:
+    default:
+      database: nubcycling_development
+      hosts:
+        - localhost:27017
+    secondary:
+      uri: mongodb://<%= DBUSER %>:<%= DBPASS %>@ds031347.mongolab.com:31347/<%= DBNAME %>
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+    secondary:
+      uri: mongodb://<%= DBUSER %>:<%= DBPASS %>@ds031347.mongolab.com:31347/<%= DBNAME %>
